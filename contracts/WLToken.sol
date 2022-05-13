@@ -38,6 +38,9 @@ contract WLToken is Initializable, ERC20Upgradeable, ERC20BurnableUpgradeable, P
 
     }
 
+    function burn(address to, uint256 amount) public onlyOwner {
+        _burn(to, amount);
+    }
     function _beforeTokenTransfer(address from, address to, uint256 amount)
         internal
         whenNotPaused
