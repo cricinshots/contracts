@@ -1,8 +1,14 @@
 const { expect } = require("chai");
-const { ethers } = require("hardhat");
+const {ethers} = require("hardhat");
 
 describe("WLToken", function () {
-    it("Should return the new greeting once it's changed", async function () {
-        const wl = await ethers.getContractFactory("WLToken");
+    it("Deployment should assign the total supply of tokens to the owner", async function () {
+
+
+        const Token = await ethers.getContractFactory("WLToken");
+        const hardhatToken = await Token.deploy();
+
+
+
     });
 });
