@@ -4,6 +4,7 @@
 // When running the script with `npx hardhat run <script>` you'll find the Hardhat
 // Runtime Environment's members available in the global scope.
 const hre = require("hardhat");
+const express = require('express')
 
 async function main() {
     // Hardhat always runs the compile task when running scripts with its command
@@ -12,19 +13,20 @@ async function main() {
     // If this script is run directly using `node` you may want to call compile
     // manually to make sure everything is compiled
     // await hre.run('compile');
-
     // We get the contract to deploy
     const wlToken = await hre.ethers.getContractFactory("WLToken");
-    const wl = await wlToken.deploy();
+    const kl = await wlToken.deploy();
 
-    await wl.deployed();
+    let wl = (await hre.ethers.getContractAt("WLToken", kl.address));
+    // await wl.deployed();
+    console.log(wl);
     await wl.mint("0xbda5747bfd65f08deb54cb465eb87d40e51b197e", 1);
     await wl.checkSupply();
+
     // await wl.balanceOfUser("0xbda5747bfd65f08deb54cb465eb87d40e51b197e");
     // await wl.burn2("0xbda5747bfd65f08deb54cb465eb87d40e51b197e", 100);
     // await wl.balanceOf("0xbda5747bfd65f08deb54cb465eb87d40e51b197e");
     // await wl.balanceOfUser("0xbda5747bfd65f08deb54cb465eb87d40e51b197e");
-
 
 }
 
