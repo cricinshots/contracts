@@ -30,9 +30,9 @@ module.exports = {
       accounts: [deployerPrivateKey],
       network_id: network_id,
       chainId: network_id,
-      gas: 3000000,
-      gasPrice: 1000000000,
-      blockGasLimit: 10000000,
+      gas: 10000000,
+      gasPrice: 21835968000000,
+      blockGasLimit: 99999999999999999999999999999999999999999999999,
       allowUnlimitedContractSize: false,
       timeout: 1000000,
       isFork: true

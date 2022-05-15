@@ -19,13 +19,14 @@ async function main() {
 
     let wl = (await hre.ethers.getContractAt("WLToken", kl.address));
     // await wl.deployed();
-    console.log(wl);
-    await wl.mint("0xbda5747bfd65f08deb54cb465eb87d40e51b197e", 1);
-    await wl.checkSupply();
+    // console.log(wl);
+    await wl.mint("0x22c8F656a4599A79619E5756A5b6cB8eaA193bD7", 9);
+    // await wl.checkSupply();
 
     // await wl.balanceOfUser("0xbda5747bfd65f08deb54cb465eb87d40e51b197e");
     // await wl.burn2("0xbda5747bfd65f08deb54cb465eb87d40e51b197e", 100);
-    // await wl.balanceOf("0xbda5747bfd65f08deb54cb465eb87d40e51b197e");
+    console.log(wl.address);
+    console.log(await wl.balanceOfUser("0x22c8F656a4599A79619E5756A5b6cB8eaA193bD7"));
     // await wl.balanceOfUser("0xbda5747bfd65f08deb54cb465eb87d40e51b197e");
 
 }
