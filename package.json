@@ -17,7 +17,8 @@
   },
   "scripts": {
     "x": "node ",
-    "hdc": "npx hardhat compile"
+    "hdc": "npx hardhat compile",
+    "start": "node ./scripts/server.js"
   },
   "engines": {
     "node": "<=16.15.0"
