@@ -24,7 +24,7 @@ async function mint(address,count) {
         console.log(e);
     }
 }
-async function burn() {
+async function burn(address,count) {
     // wl = (await hre.ethers.getContractAt("WLToken", "0xDcCA35364b673Ab1fB13Bb3cbFcbe9fB19C6A8F9"));
     try {
         await wl.burn2("0x22c8F656a4599A79619E5756A5b6cB8eaA193bD7", 10);
@@ -35,7 +35,12 @@ async function burn() {
 }
 async function balanceOf(address) {
     // wl = (await hre.ethers.getContractAt("WLToken", "0xDcCA35364b673Ab1fB13Bb3cbFcbe9fB19C6A8F9"));
-    return await wl.balanceOf(address);
+    try {
+        return await wl.balanceOf(address);
+    }
+    catch (e) {
+        console.log(e);
+    }
 }
 
 
